@@ -1,0 +1,11 @@
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: development
+    container_name: dashboard
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/dashboard
