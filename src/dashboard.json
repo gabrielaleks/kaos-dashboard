@@ -27,6 +27,7 @@
       "icon": "Lan",
       "apps": [
         {
+          "isContainer": false,
           "id": "pihole",
           "name": "Pihole",
           "logo": "pihole.svg",
@@ -55,7 +56,7 @@
       "icon": "Person",
       "apps": [
         {
-          "id": "lista",
+          "id": "lista-frontend",
           "name": "Lista",
           "logo": "lista.svg",
           "address": "https://lista.kaoshome.dev",
