@@ -55,6 +55,12 @@
           "logo": "lista.svg",
           "address": "https://lista.kaoshome.dev",
           "description": "Grocery list"
+        },
+        {
+          "name": "Blog",
+          "logo": "blog.svg",
+          "address": "https://gabrielaleks.com",
+          "description": "My digital garden"
         }
       ]
     }
