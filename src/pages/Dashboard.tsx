@@ -38,7 +38,7 @@ export function Dashboard({ searchQuery }: DashboardProps) {
 			}
 		}
 		fetchStatus()
-		const interval = setInterval(fetchStatus, 30_000)
+		const interval = setInterval(fetchStatus, 5_000)
 		return () => clearInterval(interval)
 	}, [])
 
