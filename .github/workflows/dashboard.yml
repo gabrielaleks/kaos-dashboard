@@ -2,10 +2,10 @@ name: CI/CD Dashboard
 
 on:
   push:
-  branches:
-    - master
-  paths:
-    - './**'
+    branches:
+      - master
+    paths:
+      - './**'
 
 jobs:
   build-and-push:
