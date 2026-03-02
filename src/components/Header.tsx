@@ -7,6 +7,7 @@ import {
 	Typography,
 } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home'
+import GitHubIcon from '@mui/icons-material/GitHub'
 import SearchIcon from '@mui/icons-material/Search'
 
 interface HeaderProps {
@@ -16,16 +17,33 @@ interface HeaderProps {
 export function Header({ onSearch }: HeaderProps) {
 	return (
 		<AppBar position="static">
-			<Toolbar disableGutters sx={{ bgcolor: '#282a36', px: 10 }}>
-				<Box
-					component="img"
-					src="/kaos-logo.png"
-					alt="KAOS"
-					sx={{ width: 48, height: 48, mr: 2 }}
-				/>
-				<Typography variant="h4" fontWeight="bold">
-					KAOS Dashboard
-				</Typography>
+			<Toolbar disableGutters sx={{ bgcolor: '#282a36', px: { xs: 2, md: 10 } }}>
+				<Link
+					href="/"
+					underline="none"
+					color="inherit"
+					sx={{
+						display: 'flex',
+						alignItems: 'center',
+						gap: 0.5,
+						minWidth: 0,
+						'&:hover': { opacity: 0.75 },
+					}}
+				>
+					<Box
+						component="img"
+						src="/kaos-logo.png"
+						alt="KAOS"
+						sx={{ width: { xs: 36, md: 48 }, height: { xs: 36, md: 48 }, mr: 2, flexShrink: 0 }}
+					/>
+					<Typography
+						fontWeight="bold"
+						noWrap
+						sx={{ fontSize: { xs: '1.25rem', md: '2.125rem' } }}
+					>
+						KAOS Dashboard
+					</Typography>
+				</Link>
 			</Toolbar>
 
 			<Toolbar
@@ -33,7 +51,8 @@ export function Header({ onSearch }: HeaderProps) {
 				sx={{
 					bgcolor: '#2f3142',
 					minHeight: '48px !important',
-					px: 10,
+					px: { xs: 2, md: 10 },
+					gap: 2,
 				}}
 			>
 				<Link
@@ -49,6 +68,21 @@ export function Header({ onSearch }: HeaderProps) {
 				>
 					<HomeIcon fontSize="small" />
 					<Typography variant="body2">Home</Typography>
+				</Link>
+				<Link
+					href="https://github.com/gabrielaleks"
+					underline="none"
+					color="inherit"
+					target="_blank"
+					sx={{
+						display: 'flex',
+						alignItems: 'center',
+						gap: 0.5,
+						'&:hover': { opacity: 0.75 },
+					}}
+				>
+					<GitHubIcon fontSize="small" />
+					<Typography variant="body2">Github</Typography>
 				</Link>
 
 				<Box sx={{ flexGrow: 1 }} />
@@ -66,8 +100,7 @@ export function Header({ onSearch }: HeaderProps) {
 				>
 					<SearchIcon />
 					<InputBase
-						placeholder="Search…"
-						sx={{ color: 'inherit' }}
+						sx={{ color: 'inherit', width: '5em' }}
 						onChange={(e) => onSearch(e.target.value)}
 					/>
 				</Box>
