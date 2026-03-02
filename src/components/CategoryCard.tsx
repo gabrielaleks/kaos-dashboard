@@ -2,10 +2,12 @@ import { Card, CardContent, Typography, Box, Link } from '@mui/material'
 import { iconRegistry } from '../icons'
 
 interface App {
+	id?: string
 	name: string
 	logo: string
 	address: string
 	description: string
+	isContainer?: boolean
 }
 
 interface CategoryCardProps {
@@ -13,9 +15,22 @@ interface CategoryCardProps {
 	icon?: string
 	apps: App[]
 	logos: Record<string, string>
+	containerStatus?: Record<string, string>
 }
 
-export function CategoryCard({ name, icon, apps, logos }: CategoryCardProps) {
+function getStatusColor(status: string | undefined): string {
+	if (!status) return '#6272a4'
+	if (status === 'running') return '#50fa7b'
+	return '#ff5555'
+}
+
+export function CategoryCard({
+	name,
+	icon,
+	apps,
+	logos,
+	containerStatus = {},
+}: CategoryCardProps) {
 	const Icon = icon ? iconRegistry[icon] : null
 
 	return (
@@ -54,6 +69,25 @@ export function CategoryCard({ name, icon, apps, logos }: CategoryCardProps) {
 										{app.description}
 									</Typography>
 								</Box>
+								{app.isContainer !== false && (
+									<Box
+										title={
+											app.id
+												? (containerStatus[app.id] ?? 'unknown')
+												: 'unknown'
+										}
+										sx={{
+											ml: 'auto',
+											flexShrink: 0,
+											width: 8,
+											height: 8,
+											borderRadius: '50%',
+											bgcolor: app.id
+												? getStatusColor(containerStatus[app.id])
+												: '#6272a4',
+										}}
+									/>
+								)}
 							</Box>
 						</CardContent>
 					</Card>

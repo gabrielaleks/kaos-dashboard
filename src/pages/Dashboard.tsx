@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Box } from '@mui/material'
 import Fuse from 'fuse.js'
 import dashboardConfig from '../dashboard.json'
@@ -24,6 +24,24 @@ interface DashboardProps {
 }
 
 export function Dashboard({ searchQuery }: DashboardProps) {
+	const [containerStatus, setContainerStatus] = useState<
+		Record<string, string>
+	>({})
+
+	useEffect(() => {
+		async function fetchStatus() {
+			try {
+				const res = await fetch('/api/status')
+				if (res.ok) setContainerStatus(await res.json())
+			} catch {
+				// keep last known state
+			}
+		}
+		fetchStatus()
+		const interval = setInterval(fetchStatus, 30_000)
+		return () => clearInterval(interval)
+	}, [])
+
 	const filteredCategories = useMemo(() => {
 		if (!searchQuery) return dashboardConfig.categories
 
@@ -57,6 +75,7 @@ export function Dashboard({ searchQuery }: DashboardProps) {
 					icon={category.icon}
 					apps={category.apps}
 					logos={logos}
+					containerStatus={containerStatus}
 				/>
 			))}
 		</Box>

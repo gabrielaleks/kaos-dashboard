@@ -16,7 +16,10 @@ RUN npm run build
 
 # Production stage
 FROM nginx:alpine AS production
-COPY ./dist /usr/share/nginx/html
+RUN apk add --no-cache nodejs supervisor docker-cli
+COPY --from=build /dashboard/dist /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./server/status.mjs /app/status.mjs
+COPY ./supervisord.conf /etc/supervisord.conf
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["supervisord", "-c", "/etc/supervisord.conf"]

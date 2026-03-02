@@ -6,12 +6,14 @@
       "icon": "Settings",
       "apps": [
         {
+          "id": "portainer",
           "name": "Portainer",
           "logo": "portainer.svg",
           "address": "https://portainer.kaoshome.dev",
           "description": "Docker management"
         },
         {
+          "id": "traefik",
           "name": "Traefik",
           "logo": "traefik.svg",
           "address": "https://traefik.kaoshome.dev",
@@ -25,6 +27,7 @@
       "icon": "Lan",
       "apps": [
         {
+          "id": "pihole",
           "name": "Pihole",
           "logo": "pihole.svg",
           "address": "https://pihole.kaoshome.dev",
@@ -38,6 +41,7 @@
       "icon": "Home",
       "apps": [
         {
+          "id": "homeassistant",
           "name": "Home Assistant",
           "logo": "homeassistant.svg",
           "address": "https://homeassistant.kaoshome.dev",
@@ -51,12 +55,14 @@
       "icon": "Person",
       "apps": [
         {
+          "id": "lista",
           "name": "Lista",
           "logo": "lista.svg",
           "address": "https://lista.kaoshome.dev",
           "description": "Grocery list"
         },
         {
+          "isContainer": false,
           "name": "Blog",
           "logo": "blog.svg",
           "address": "https://gabrielaleks.com",

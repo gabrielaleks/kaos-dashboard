@@ -9,3 +9,4 @@ services:
       - '5173:5173'
     volumes:
       - .:/dashboard
+      - /var/run/docker.sock:/var/run/docker.sock:ro
