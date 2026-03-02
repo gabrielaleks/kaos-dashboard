@@ -1,0 +1,62 @@
+{
+  "categories": [
+    {
+      "id": "management",
+      "name": "Management",
+      "icon": "Settings",
+      "apps": [
+        {
+          "name": "Portainer",
+          "logo": "portainer.svg",
+          "address": "https://portainer.kaoshome.dev",
+          "description": "Docker management"
+        },
+        {
+          "name": "Traefik",
+          "logo": "traefik.svg",
+          "address": "https://traefik.kaoshome.dev",
+          "description": "Reverse proxy and load balancer"
+        }
+      ]
+    },
+    {
+      "id": "networking",
+      "name": "Networking",
+      "icon": "Lan",
+      "apps": [
+        {
+          "name": "Pihole",
+          "logo": "pihole.svg",
+          "address": "https://pihole.kaoshome.dev",
+          "description": "DNS sinkhole and ad-blocker"
+        }
+      ]
+    },
+    {
+      "id": "smart-home",
+      "name": "Smart Home",
+      "icon": "Home",
+      "apps": [
+        {
+          "name": "Home Assistant",
+          "logo": "homeassistant.svg",
+          "address": "https://homeassistant.kaoshome.dev",
+          "description": "Home automation platform"
+        }
+      ]
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "icon": "Person",
+      "apps": [
+        {
+          "name": "Lista",
+          "logo": "lista.svg",
+          "address": "https://lista.kaoshome.dev",
+          "description": "Grocery list"
+        }
+      ]
+    }
+  ]
+}

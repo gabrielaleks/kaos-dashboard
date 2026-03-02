@@ -1,7 +1,9 @@
 name: CI/CD Dashboard
 
 on:
-  workflow_dispatch:
+  push:
+  branches:
+    - master
 
 jobs:
   build-and-push:
