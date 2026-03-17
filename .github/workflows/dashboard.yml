@@ -19,18 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -44,17 +32,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_PAT }}
 
-      - name: Build and push image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/arm64
-          target: production
-          push: true
-          tags: ghcr.io/gabrielaleks/kaos-dashboard:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+      - name: Build and push backend image
+        run: |
+          docker buildx build \
+            --platform linux/arm64 \
+            -t ghcr.io/gabrielaleks/kaos-dashboard:latest \
+            -f ./Dockerfile \
+            --target production \
+            --cache-from type=gha \
+            --cache-to type=gha,mode=max \
+            --push .
 
   deploy:
     runs-on: ubuntu-latest
