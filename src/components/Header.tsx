@@ -49,7 +49,7 @@ export function Header({ onSearch }: HeaderProps) {
 						noWrap
 						sx={{ fontSize: { xs: '1.25rem', md: '2.125rem' } }}
 					>
-						KAOS Dashboard - cicd test
+						KAOS Dashboard
 					</Typography>
 				</Link>
 			</Toolbar>
