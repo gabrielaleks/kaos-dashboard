@@ -47,6 +47,13 @@
           "logo": "homeassistant.svg",
           "address": "https://homeassistant.kaoshome.dev",
           "description": "Home automation platform"
+        },
+        {
+          "id": "matter",
+          "name": "Matter",
+          "logo": "matter.svg",
+          "address": "https://matter.kaoshome.dev",
+          "description": "Custom matter controller"
         }
       ]
     },
