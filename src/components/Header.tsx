@@ -17,7 +17,10 @@ interface HeaderProps {
 export function Header({ onSearch }: HeaderProps) {
 	return (
 		<AppBar position="static">
-			<Toolbar disableGutters sx={{ bgcolor: '#282a36', px: { xs: 2, md: 10 } }}>
+			<Toolbar
+				disableGutters
+				sx={{ bgcolor: '#282a36', px: { xs: 2, md: 10 } }}
+			>
 				<Link
 					href="/"
 					underline="none"
@@ -34,14 +37,19 @@ export function Header({ onSearch }: HeaderProps) {
 						component="img"
 						src="/kaos-logo.png"
 						alt="KAOS"
-						sx={{ width: { xs: 36, md: 48 }, height: { xs: 36, md: 48 }, mr: 2, flexShrink: 0 }}
+						sx={{
+							width: { xs: 36, md: 48 },
+							height: { xs: 36, md: 48 },
+							mr: 2,
+							flexShrink: 0,
+						}}
 					/>
 					<Typography
 						fontWeight="bold"
 						noWrap
 						sx={{ fontSize: { xs: '1.25rem', md: '2.125rem' } }}
 					>
-						KAOS Dashboard
+						KAOS Dashboard - cicd test
 					</Typography>
 				</Link>
 			</Toolbar>
