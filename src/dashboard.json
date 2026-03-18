@@ -49,11 +49,11 @@
           "description": "Home automation platform"
         },
         {
-          "id": "matter",
-          "name": "Matter",
-          "logo": "matter.svg",
-          "address": "https://matter.kaoshome.dev",
-          "description": "Custom matter controller"
+          "id": "nanomatter",
+          "name": "Nano Matter",
+          "logo": "nanomatter.svg",
+          "address": "https://nanomatter.kaoshome.dev",
+          "description": "Lightweight matter controller"
         }
       ]
     },
