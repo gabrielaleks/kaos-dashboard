@@ -49,7 +49,7 @@
           "description": "Home automation platform"
         },
         {
-          "id": "nanomatter",
+          "id": "nanomatter-frontend",
           "name": "Nano Matter",
           "logo": "nanomatter.svg",
           "address": "https://nanomatter.kaoshome.dev",
