@@ -50,7 +50,7 @@
         },
         {
           "id": "nanomatter-frontend",
-          "name": "Nano Matter",
+          "name": "Nanomatter",
           "logo": "nanomatter.svg",
           "address": "https://nanomatter.kaoshome.dev",
           "description": "Lightweight matter controller"
