@@ -54,6 +54,13 @@
           "logo": "nanomatter.svg",
           "address": "https://nanomatter.kaoshome.dev",
           "description": "Lightweight matter controller"
+        },
+        {
+          "id": "envelope-hub",
+          "name": "Envelope",
+          "logo": "envelope.svg",
+          "address": "https://envelope.kaoshome.dev",
+          "description": "Mail detection system"
         }
       ]
     },
