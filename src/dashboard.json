@@ -84,6 +84,27 @@
           "description": "My digital garden"
         }
       ]
+    },
+    {
+      "id": "storage",
+      "name": "Storage",
+      "icon": "Storage",
+      "apps": [
+        {
+          "id": "samba",
+          "name": "Samba",
+          "logo": "samba.svg",
+          "address": "smb://storage.kaoshome.dev/storage",
+          "description": "Network file share"
+        },
+        {
+          "id": "backrest",
+          "name": "Backrest",
+          "logo": "backrest.svg",
+          "address": "https://backrest.kaoshome.dev",
+          "description": "Encrypted off-site backups"
+        }
+      ]
     }
   ]
 }
