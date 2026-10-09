@@ -92,10 +92,17 @@
       "apps": [
         {
           "id": "samba",
-          "name": "Samba",
+          "name": "Samba (LAN)",
+          "logo": "samba.svg",
+          "address": "smb://192.168.178.46/storage",
+          "description": "Fast access at home"
+        },
+        {
+          "id": "samba",
+          "name": "Samba (VPN)",
           "logo": "samba.svg",
           "address": "smb://storage.kaoshome.dev/storage",
-          "description": "Network file share"
+          "description": "Access from anywhere"
         },
         {
           "id": "backrest",
